@@ -1,0 +1,47 @@
+﻿@model SearchEngine.Models.PageRankResultModel[]
+@{
+    ViewBag.Title = "Result";
+}
+
+<head>
+    @Styles.Render("~/Content/result.css")
+    <script src="~/Scripts/result.js"></script>
+</head>
+
+<body>
+    @for (int i = 0; i < Model.Length; ++i)
+    {
+        <div>
+            <b id="url"><a href= "@Model[i].url">@Model[i].url</a></b>
+            <div id="results">
+                <div id="score">PageRank score: <b>@Model[i].score</b></div>
+                <p id="keywords">Keyword counts:</p>
+                @for (int j = 0; j < Model[i].keywords.Length; j++)
+                {
+                    <div>@Model[i].keywords[j]: <b>@Model[i].keywordCounts[j]</b></div>
+                }
+                <div id="secondSubLevelUrl">
+                    @foreach (var item in Model[i].subUrls)
+                    {
+                        <div><b><a href="@item.url">@item.url</a></b></div>
+                        for (int j = 0; j < item.keywords.Length; j++)
+                        {
+                            <div>@item.keywords[j]: <b>@item.keywordCounts[j]</b></div>
+                        }
+                        <div id="thirdLevel">
+                            @foreach (var thirdLevel in item.subUrls)
+                            {
+                                <div><b><a href="@thirdLevel.url">@thirdLevel.url</a></b></div>
+                                for (int j = 0; j < thirdLevel.keywords.Length; j++)
+                                {
+                                    <div>@thirdLevel.keywords[j]: <b>@thirdLevel.keywordCounts[j]</b></div>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</body>
+

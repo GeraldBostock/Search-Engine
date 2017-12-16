@@ -1,0 +1,50 @@
+﻿body {
+
+}
+
+form {
+    background-color: #5a5c5e;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px;
+}
+
+.text {
+    display: block;
+    width: 50%;
+    border: 1px solid #ccc;
+    padding: 12px 10px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#doodle {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#result {
+    border-radius: 10px;
+    display: block;
+    color: #069691;
+    text-align: center;
+    background-color: #042547;
+    width: 50%;
+    box-shadow: 1px 1px 5px black;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+#searchButton {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#textboxContainer{
+    padding: 20px 0;
+}

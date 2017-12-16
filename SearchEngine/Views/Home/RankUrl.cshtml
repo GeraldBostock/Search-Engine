@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Url";
+}
+
+<head>
+    @Styles.Render("~/Content/pagerank.css")
+    <script src="~/Scripts/url.js"></script>
+</head>
+
+<body>
+
+    <canvas id="doodle" width="800" height="250"></canvas>
+
+    <div class="container" id="textboxContainer">
+        <div>
+            @Html.TextBox(" ", null, new { @class = "keywordBox", id = "keywords", placeholder = "Keyword(s)" })
+        </div>
+        <div id="urlTextBox">
+            @Html.TextBox(" ", null, new { @class = "urlBox", id = "url", placeholder = "URL" })
+            <button type="button" class="btn btn-default" id="urlButton">
+                <b>Add URL</b>
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        </div>
+        <div>
+            <input type="button" value="Rank" class="btn btn-default" id="submit" />
+        </div>
+        <div class="container" id="urls" style="display: none">
+            <div><b>URL(s) to query: </b></div>
+        </div>
+    </div>
+</body>
+

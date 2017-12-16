@@ -1,0 +1,32 @@
+﻿@model SearchEngine.Models.KeywordModel
+@{
+    ViewBag.Title = "Keyword";
+}
+
+<head>
+    @Styles.Render("~/Content/keyword.css")
+    <script src="~/Scripts/keyword.js"></script> 
+</head>
+
+<body>
+
+    <canvas id="doodle" width="800" height="250"></canvas>
+
+    @using (Html.BeginForm("Keyword", "Home", FormMethod.Post))
+    {
+        <div class="container" id="textboxContainer">
+            <div>
+                @Html.TextBoxFor(m => m.keywords, new { @class = "text", placeholder = "Keyword(s)", id = "keywords" })
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.url, new { @class = "text", placeholder = "URL", id = "url" })
+            </div>
+            <div>
+                <input type="button" value="Count" class="btn btn-default" id="searchButton" />
+            </div>
+            <div class="container" id="result" style="display: none">
+
+            </div>
+        </div>
+    }
+</body>
